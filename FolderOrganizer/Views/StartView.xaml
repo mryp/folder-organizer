@@ -17,6 +17,22 @@
             <TextBox TextWrapping="NoWrap" Height="24"
                  Text="{Binding FolderPath}"/>
         </DockPanel>
+
+        <StackPanel Margin="10,10,10,10">
+            <Label>対象ファイルフィルタ（例：*.db;*.tmp）：</Label>
+            <TextBox TextWrapping="NoWrap" Height="24"
+                     Text="{Binding SearchPattern}"/>
+            <Label>対象ファイルの処理方法：</Label>
+            <ComboBox
+                ItemsSource="{Binding SearchDeleteTypeNameTable}"
+                DisplayMemberPath="Value"
+                SelectedValue="{Binding SearchDeleteType, Mode=TwoWay}"
+                SelectedValuePath="Key"/>
+        </StackPanel>
+
+        <CheckBox Margin="10,0,10,10" Content="ファルダだけのときはフォルダ内のファイルを1階層上に移動する"
+                  IsChecked="{Binding MoveUpFolder}"/>
+
         <Button Content="処理開始" Height="48" Margin="10,10,10,0"
                 cal:Message.Attach="[Event Click] = [Action Start]"/>
     </StackPanel>

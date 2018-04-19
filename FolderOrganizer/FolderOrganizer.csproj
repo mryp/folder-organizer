@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Models\FolderOrganizerManager.cs" />
+    <Compile Include="Models\FolderOrganizerOption.cs" />
     <Compile Include="Models\ResultItem.cs" />
     <Compile Include="ViewModels\ProcViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -113,7 +114,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>

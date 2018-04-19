@@ -29,6 +29,12 @@ namespace FolderOrganizer.ViewModels
             set;
         }
 
+        public FolderOrganizerOption Option
+        {
+            get;
+            set;
+        }
+
         public string CancelButtonName
         {
             get { return _cancelButtonName; }
@@ -84,7 +90,7 @@ namespace FolderOrganizer.ViewModels
 
         public void Loaded()
         {
-            _organizer = new FolderOrganizerManager(this.FolderPath);
+            _organizer = new FolderOrganizerManager(this.FolderPath, this.Option);
             _organizer.Loaded += organizer_Loaded;
             _organizer.ProgressChanged += organizer_ProgressChanged;
             _organizer.Completed += organizer_Completed;
