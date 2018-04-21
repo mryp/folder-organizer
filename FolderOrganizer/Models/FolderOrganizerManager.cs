@@ -208,7 +208,7 @@ namespace FolderOrganizer.Models
             if (pathList.Length == 1)
             {
                 FileInfo info = new FileInfo(pathList[0]);
-                if (info.Attributes == FileAttributes.Directory)
+                if ((info.Attributes | FileAttributes.Directory) != 0)
                 {
                     if (!moveUpFolder(pathList[0], level + 1))
                     {
@@ -226,7 +226,7 @@ namespace FolderOrganizer.Models
                     try
                     {
                         FileInfo info = new FileInfo(path);
-                        if (info.Attributes == FileAttributes.Directory)
+                        if ((info.Attributes | FileAttributes.Directory) != 0)
                         {
                             Directory.Move(path, Path.Combine(parentDirPath, info.Name));
                         }
