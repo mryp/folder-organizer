@@ -36,7 +36,7 @@ namespace FolderOrganizer.Models
             _option = option;
         }
 
-        public void ExtractAsync()
+        public void OrganizeAsync()
         {
             if (_extractTask != null)
             {

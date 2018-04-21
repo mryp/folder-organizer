@@ -94,7 +94,7 @@ namespace FolderOrganizer.ViewModels
             _organizer.Loaded += organizer_Loaded;
             _organizer.ProgressChanged += organizer_ProgressChanged;
             _organizer.Completed += organizer_Completed;
-            _organizer.ExtractAsync();
+            _organizer.OrganizeAsync();
         }
 
         public void Cancel()
